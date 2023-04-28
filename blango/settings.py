@@ -209,6 +209,9 @@ class Dev(Configuration):
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
+
 class Prod(Dev):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
