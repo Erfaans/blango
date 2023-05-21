@@ -100,7 +100,8 @@ class Dev(Configuration):
         'rest_framework',
         'rest_framework.authtoken',
         'drf_yasg',
-        'django_filters'
+        'django_filters',
+        'versatileimagefield',
 
     ]
 
@@ -143,7 +144,7 @@ class Dev(Configuration):
             "Basic": {"type": "basic"},
         }
     }
-        SIMPLE_JWT = {
+    SIMPLE_JWT = {
         "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
         "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
     }
@@ -246,6 +247,8 @@ class Dev(Configuration):
 
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     ACCOUNT_ACTIVATION_DAYS = 7
+    MEDIA_ROOT = BASE_DIR / "media"
+    MEDIA_URL = "/media/"
 
 class Prod(Dev):
     DEBUG = False
